@@ -29,17 +29,18 @@ export default function VariablesAndDataTypes() {
         special meaning.
       </Typography>
 
-      <SyntaxEl codeString={codeString1} />
+      <SyntaxEl
+        codeString={`let $ = 1; // declared a variable with the name "$"
+let _ = 2; // and now a variable with the name "_"`}
+      />
       <Typography variant={"body2"} mb={2}>
         Examples of incorrect variable names:
       </Typography>
 
-      <SyntaxEl codeString={codeString2} />
+      <SyntaxEl
+        codeString={`let 1a; // cannot start with a digit
+let my-name; // hyphens '-' aren't allowed in the name`}
+      />
     </>
   );
 }
-
-const codeString1 = `let $ = 1; // declared a variable with the name "$"
-let _ = 2; // and now a variable with the name "_"`;
-const codeString2 = `let 1a; // cannot start with a digit
-let my-name; // hyphens '-' aren't allowed in the name`;

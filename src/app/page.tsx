@@ -1,10 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import MenuPage from "@/components/menu-page";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Menu",
+};
 
 export default function Home() {
-  console.log("MenuPage");
-  return (
-    <Box>
-      <Typography variant={"h3"}>Hello</Typography>
-    </Box>
-  );
+  return <MenuPage />;
 }
