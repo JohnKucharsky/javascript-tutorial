@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import theme from "@/app/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material/";
@@ -22,7 +22,9 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <body>
-            <MenuWrapper>{children}</MenuWrapper>
+            <Suspense>
+              <MenuWrapper>{children}</MenuWrapper>
+            </Suspense>
           </body>
         </ThemeProvider>
       </AppRouterCacheProvider>
