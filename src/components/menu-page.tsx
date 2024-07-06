@@ -1,3 +1,4 @@
+"use client";
 import { Box, Grid, IconButton, Link, Stack, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { usePathname } from "next/navigation";
@@ -20,9 +21,11 @@ export default function MenuPage() {
         <Typography variant={"h4"} py={3}>
           Menu
         </Typography>
-        <IconButton component={Link} href={pathname}>
-          <CloseIcon />
-        </IconButton>
+        {pathname !== "/" ? (
+          <IconButton component={Link} href={pathname}>
+            <CloseIcon />
+          </IconButton>
+        ) : null}
       </Stack>
       <Grid container spacing={1}>
         {Object.entries(links).map(([link, title]) => (
